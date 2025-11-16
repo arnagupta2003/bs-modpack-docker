@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  bombsquad-server:
+    build: .
+    container_name: bombsquad
+    ports:
+      - "43210:43210"  # host:container; change port if different
+    volumes:
+      - ./dist:/app/dist  # mount the dist folder if you want to change mods / settings
+    restart: unless-stopped
